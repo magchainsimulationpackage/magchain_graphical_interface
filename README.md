@@ -1,9 +1,9 @@
 # magchain_graphical_interface
 Graphical interfaces in PyQt5 to run and analyse MagChain simulations. 
 
-1) MagChainSetup
+- MagChainSetup
 
-2) MagChainAnalysis
+- MagChainAnalysis
 
 Table of contents
 =================
@@ -18,9 +18,9 @@ Table of contents
 <!--te-->
 
 # Description
-1) **MagChainSetup:** Graphical interface to run MagChain simulations. As it is explained in the MagChain Simultion Program documentation, an attraction_radius.dat file and a general input file (that includes the attraction_radius.dat file) are needed. With this graphical interface these input files can be easily generated and, afterwards, the simulation can be run.
+- **MagChainSetup:** Graphical interface to run MagChain simulations. As it is explained in the MagChain Simultion Program documentation, an attraction_radius.dat file and a general input file (that includes the attraction_radius.dat file) are needed. With this graphical interface these input files can be easily generated and, afterwards, the simulation can be run.
 
-2) **MagChainAnalysis:** Graphical interface to analyse the generated output data by MagChain Simulation Program.
+- **MagChainAnalysis:** Graphical interface to analyse the generated output data by MagChain Simulation Program.
 
 # Requirements
   
