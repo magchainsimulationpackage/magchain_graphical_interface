@@ -35,12 +35,7 @@ Python 3 installed with the following libraries
 Open the .pyw file by double cliking or execute from a console as `python3 filename.pyw`
 
 # Authors
-
-1) J.S. Andreu
-
-2) C. Calero
-
-3) A. Giménez-Romero
+- A. Giménez-Romero
 
 # License
 
