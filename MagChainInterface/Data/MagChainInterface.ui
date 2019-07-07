@@ -31,10 +31,10 @@
      </font>
     </property>
     <property name="text">
-     <string>MagChain Interface</string>
+     <string>MagChain Setup</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>24</x>
@@ -64,7 +64,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Nº Particles</string>
+          <string>Nº Particles (*)</string>
          </property>
         </widget>
        </item>
@@ -97,7 +97,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>x box</string>
+          <string>x box (*)</string>
          </property>
         </widget>
        </item>
@@ -117,7 +117,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>y box</string>
+          <string>y box (*)</string>
          </property>
         </widget>
        </item>
@@ -137,7 +137,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>z box</string>
+          <string>z box (*)</string>
          </property>
         </widget>
        </item>
@@ -157,7 +157,7 @@
        <item row="6" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Timestep</string>
+          <string>Timestep (*)</string>
          </property>
         </widget>
        </item>
@@ -177,7 +177,7 @@
        <item row="7" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>Nº steps</string>
+          <string>Nº steps (*)</string>
          </property>
         </widget>
        </item>
@@ -573,7 +573,7 @@
      <x>0</x>
      <y>0</y>
      <width>1184</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
