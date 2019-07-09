@@ -737,7 +737,7 @@ class calc_attradius(object):
         self.utarget = -1.0
         self.xmin = 1.0
         self.xmax = 50.0
-        self.u = 0
+        self.u = 0.0
 
     def EvalEnergy(self, m, x):
         energy = 0.0
@@ -747,10 +747,10 @@ class calc_attradius(object):
             
             d = x + (i-1)
             d = d**3
-            energy = energy + 1/d
+            energy += 1/d
 
         
-        energy = -self.gamma * energy
+        energy *= -self.gamma
 
         return energy
 
@@ -765,17 +765,17 @@ class calc_attradius(object):
             radiusfile.write(str(i))
             progressBar.setValue(i/(self.maxsize + 1) * 100)
 
-            x = self.xmin + (self.xmax - self.xmin)*np.random.uniform()
+            x = self.xmin + (self.xmax - self.xmin)*np.random.uniform(0, 1)
                 
-            u = self.EvalEnergy(i, x)
+            self.u = self.EvalEnergy(i, x)
               
-            while (abs(self.u - self.utarget) > self.tolerance):
+            while abs(self.u - self.utarget) > self.tolerance:
 
-                if ((self.u - self.utarget) < 0):
-                    x = x + (self.xmax - x) * np.random.uniform()
+                if self.u - self.utarget < 0:
+                    x = x + (self.xmax - x) * np.random.uniform(0, 1)
 
                 else:
-                    x = x - (x - self.xmin) * np.random.uniform()               
+                    x = x - (x - self.xmin) * np.random.uniform(0, 1)               
 
                 self.u = self.EvalEnergy(i, x)
             
@@ -804,9 +804,19 @@ class Attradius_dial(QDialog):
 
         CA = calc_attradius(gamma, max_size)
 
+        if (CA.EvalEnergy(max_size, CA.xmax) < CA.utarget):
+
+            QMessageBox.warning(self, 'Warning!', 'increase xmax! = %.2f' % CA.xmax)
+            
+        if (CA.EvalEnergy(CA.minsize, CA.xmin) > CA.utarget):
+
+            QMessageBox.warning(self, 'Warning!', 'decrease xmin! = %.2f' % CA.xmin)
+
+
         CA.makefile(filename, self.progressBar)
 
         QMessageBox.information(self, 'Information', 'Attraction rdius file generated properly!')
+        self.progressBar.setValue(0)
         
             
 app = QApplication(sys.argv)
